@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>http://localhost/posts/</loc>
+  </url><url>
+    <loc>http://localhost/kubernetes/getting-started/</loc>
+  </url><url>
+    <loc>http://localhost/kubernetes/</loc>
+  </url><url>
+    <loc>http://localhost/</loc>
+  </url><url>
+    <loc>http://localhost/kubernetes/getting-started/00-pre-requisite/</loc>
+  </url><url>
+    <loc>http://localhost/tags/</loc>
+  </url>
+</urlset>
