@@ -4,6 +4,8 @@ main:
     ref: "/kubernetes"
     icon: "gdoc_path"
     sub:
+      - name: Terminology
+        ref: "/kubernetes/terminology"
       - name: Getting Started
         ref: "/kubernetes/getting-started"
       - name: Level 1.2

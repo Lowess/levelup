@@ -3,6 +3,7 @@ title = "LevelUp"
 theme = "hugo-geekdoc"
 
 defaultContentLanguage = "en"
+enableEmoji = true
 
 [languages.en]
 languageName = "English"

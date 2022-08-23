@@ -1,0 +1,9 @@
+---
+footer_build_with: >
+  Made with <svg class="gdoc-icon gdoc_heart"><use xlink:href="#gdoc_heart"></use></svg>
+  by Florian Dambrine | 
+  <small>Powered by <a href="https://gohugo.io/" class="gdoc-footer__link">Hugo</a> and 
+  <a href="https://geekdocs.de/" class="gdoc-footer__link">Geekdocs</a> theme </small>
+footer_legal_notice: ""
+footer_privacy_policy: ""
+footer_content_license_prefix: ""

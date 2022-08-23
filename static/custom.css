@@ -1,3 +1,20 @@
+/* Custom customization */
+
+figure.floatright {
+	max-width: 30%;
+	width: auto\9*0.3; /* ie8 */
+	height: auto;
+	float: right;
+}
+
+figure.floatleft {
+	max-width: 30%;
+	width: auto\9*0.3; /* ie8 */
+	height: auto;
+	float: left;
+}
+
+
 /* Global customization */
 
 :root {
@@ -38,13 +55,13 @@
   
     --footer-background: #2f333e;
     --footer-font-color: #ffffff;
-    --footer-link-color: #ffcc5c;
-    --footer-link-color-visited: #ffcc5c;
+    --footer-link-color: #57FFBB;
+    --footer-link-color-visited: #57FFBB;
   }
   @media (prefers-color-scheme: light) {
     :root {
       --header-background: #57FFBB;
-      --header-font-color: #ffffff;
+      --header-font-color: #333;
   
       --body-background: #ffffff;
       --body-font-color: #343a40;
@@ -74,15 +91,15 @@
   
       --footer-background: #2f333e;
       --footer-font-color: #ffffff;
-      --footer-link-color: #ffcc5c;
-      --footer-link-color-visited: #ffcc5c;
+      --footer-link-color: #57FFBB;
+      --footer-link-color-visited: #57FFBB;
     }
   }
   
   /* Dark mode theming */
   :root[color-theme="dark"] {
     --header-background: #57FFBB;
-    --header-font-color: #ffffff;
+    --header-font-color: #333;
   
     --body-background: #343a40;
     --body-font-color: #ced3d8;
@@ -112,13 +129,13 @@
   
     --footer-background: #2f333e;
     --footer-font-color: #ffffff;
-    --footer-link-color: #ffcc5c;
-    --footer-link-color-visited: #ffcc5c;
+    --footer-link-color: #57FFBB;
+    --footer-link-color-visited: #57FFBB;
   }
   @media (prefers-color-scheme: dark) {
     :root {
       --header-background: #57FFBB;
-      --header-font-color: #ffffff;
+      --header-font-color: #333;
   
       --body-background: #343a40;
       --body-font-color: #ced3d8;
@@ -148,7 +165,7 @@
   
       --footer-background: #2f333e;
       --footer-font-color: #ffffff;
-      --footer-link-color: #ffcc5c;
-      --footer-link-color-visited: #ffcc5c;
+      --footer-link-color: #57FFBB;
+      --footer-link-color-visited: #57FFBB;
     }
   }
