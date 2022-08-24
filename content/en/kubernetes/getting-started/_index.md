@@ -107,6 +107,10 @@ commit: 62e108c3dfdec8029a890ad6d8ef96b6461426dc
 🏄  Done! kubectl is now configured to use "minikube" cluster and "default" namespace by default
 {{< /highlight >}}
 
+* Here is what just happened on your laptop as a result of this command:
+
+{{< figure src="/excalidraw/00-minikube-setup.excalidraw.png" >}}
+
 > :tada: Congratulations ! You just configured a single node Kubernetes cluster (including a control plane) running inside a local VM on your laptop. Easy right ?
 
 # Install Kubernetes tooling

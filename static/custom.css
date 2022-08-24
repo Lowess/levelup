@@ -1,19 +1,8 @@
 /* Custom customization */
 
-figure.floatright {
-	max-width: 30%;
-	width: auto\9*0.3; /* ie8 */
-	height: auto;
-	float: right;
+.gdoc-columns {
+  text-align: justify;
 }
-
-figure.floatleft {
-	max-width: 30%;
-	width: auto\9*0.3; /* ie8 */
-	height: auto;
-	float: left;
-}
-
 
 /* Global customization */
 

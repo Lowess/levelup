@@ -13,7 +13,7 @@ geekdocAnchor: false
 {{< columns >}}
 ## {{< icon "gdoc_bookmark" >}} Kubernetes 
 
-Learn the fundamentals of Kubernetes while going from fundamentals concepts to setting up a whole lab locally on your machine. You will learn how the Kubernetes eco-system provides an all included solution for scaling and monitoring your applications. 
+Learn the fundamentals of Kubernetes while going from basic concepts to setting up a whole lab locally on your machine. You will learn the Kubernetes eco-system provides an all included solution for scaling and monitoring your applications. 
 {{< button relref="/kubernetes" class="info" size="large" >}}:point_right: Get started :rocket:{{< /button >}}
 
 <--->
