@@ -1,0 +1,7 @@
+<!-- {{/*
+Usage: {{< a_blank "TITLE" "URL" >}}
+*/}}-->
+<a target="_blank" href="{{ .Get 1 }}">
+    <svg class="gdoc-icon gdoc_link"><use xlink:href="#gdoc_link"></use></svg>
+    {{ .Get 0 | markdownify }}
+</a>

@@ -1,0 +1,58 @@
+Name:         hello-world
+Namespace:    default
+Priority:     0
+Node:         minikube/192.168.49.2
+Start Time:   Thu, 25 Aug 2022 16:07:09 +0200
+Labels:       run=hello-world
+Annotations:  <none>
+Status:       Running
+IP:           172.17.0.3
+IPs:
+  IP:  172.17.0.3
+Containers:
+  hello-world:
+    Container ID:   docker://23923ae1c3272b73be17720439e2da28ffeac7229022f68240a63be296872c5e
+    Image:          lowess/nginx-rainbow:yellow
+    Image ID:       docker-pullable://lowess/nginx-rainbow@sha256:35dfeb4073e2a5434825f703d680e603d1cb9485bbe4c35cd63bbf98dd9df1fa
+    Port:           <none>
+    Host Port:      <none>
+    State:          Running
+      Started:      Thu, 25 Aug 2022 16:07:28 +0200
+    Last State:     Terminated
+      Reason:       Completed
+      Exit Code:    0
+      Started:      Thu, 25 Aug 2022 16:07:12 +0200
+      Finished:     Thu, 25 Aug 2022 16:07:23 +0200
+    Ready:          True
+    Restart Count:  1
+    Environment:    <none>
+    Mounts:
+      /var/run/secrets/kubernetes.io/serviceaccount from kube-api-access-v6njt (ro)
+Conditions:
+  Type              Status
+  Initialized       True 
+  Ready             True 
+  ContainersReady   True 
+  PodScheduled      True 
+Volumes:
+  kube-api-access-v6njt:
+    Type:                    Projected (a volume that contains injected data from multiple sources)
+    TokenExpirationSeconds:  3607
+    ConfigMapName:           kube-root-ca.crt
+    ConfigMapOptional:       <nil>
+    DownwardAPI:             true
+QoS Class:                   BestEffort
+Node-Selectors:              <none>
+Tolerations:                 node.kubernetes.io/not-ready:NoExecute op=Exists for 300s
+                             node.kubernetes.io/unreachable:NoExecute op=Exists for 300s
+Events:
+  Type    Reason     Age                From               Message
+  ----    ------     ----               ----               -------
+  Normal  Scheduled  36s                default-scheduler  Successfully assigned default/hello-world to minikube
+  Normal  Pulling    36s                kubelet            Pulling image "nginx:latest"
+  Normal  Pulled     35s                kubelet            Successfully pulled image "nginx:latest" in 1.264675207s
+  Normal  Killing    23s                kubelet            Container hello-world definition changed, will be restarted
+  Normal  Pulling    23s                kubelet            Pulling image "lowess/nginx-rainbow:yellow"
+  Normal  Created    18s (x2 over 34s)  kubelet            Created container hello-world
+  Normal  Started    18s (x2 over 34s)  kubelet            Started container hello-world
+  Normal  Pulled     18s                kubelet            Successfully pulled image "lowess/nginx-rainbow:yellow" in 4.727254064s
