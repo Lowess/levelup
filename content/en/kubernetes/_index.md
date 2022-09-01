@@ -8,7 +8,7 @@ geekdocAnchor: false
 Welcome to this Kubernetes workshop ! The goal of this course if to teach you basics and must known about Kubernetes in a fun and practical way.
 
 {{< hint type="caution" title="Disclaimer">}}
-This learning material does not claim to be a replacement of any other great resources that you can find elsewhere on the web. 
+This learning material does not claim to be a replacement of any other great resources that you can find elsewhere on the web.
 {{< /hint >}}
 
 Let's start with a gentle video introduction which I think is a perfect fit to get a sense of what Kubernetes at a high level

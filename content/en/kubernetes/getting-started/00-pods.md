@@ -17,7 +17,7 @@ tags:
 
 {{< toc >}}
 
-# What is a Kubernetes pod ?
+# What is a Kubernetes `Pod` ?
 
 > Pods are the smallest deployable units of computing that you can create and manage in Kubernetes.
 

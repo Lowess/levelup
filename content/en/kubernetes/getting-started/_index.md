@@ -1,5 +1,5 @@
 ---
-title: Getting-Started
+title: 🐌 Getting-Started
 geekdocNav: true
 geekdocAlign: left
 geekdocAnchor: false
@@ -21,7 +21,7 @@ Let's make sure the list of utilities are present on your system before you move
 
 {{< tabs "tabs-pre-req-install" >}}
 
-{{< tab "macOS" >}} 
+{{< tab "macOS" >}}
 Make sure you have [Homebrew](https://brew.sh/index_fr) installed on your system and execute the following commands:
 
 * [jq](https://stedolan.github.io/jq/) is a lightweight and flexible command-line JSON processor.
@@ -31,7 +31,7 @@ brew install jq curl
 {{< /highlight >}}
 {{< /tab >}}
 
-{{< tab "Linux" >}} 
+{{< tab "Linux" >}}
 Make sure your package manager is up to date (`sudo apt-get update`) and execute the following commands
 
 * [jq](https://stedolan.github.io/jq/) is a lightweight and flexible command-line JSON processor.
@@ -60,14 +60,14 @@ sudo apt-get install jq curl
 
 {{< tabs "tabs-minikube-install" >}}
 
-{{< tab "macOS" >}} 
+{{< tab "macOS" >}}
 Download and install the latest version of `minikube` using the following command:
 {{< highlight "sh" >}}
 brew install minikube
 {{< /highlight >}}
 {{< /tab >}}
 
-{{< tab "Linux" >}} 
+{{< tab "Linux" >}}
 Download and install the latest version of `minikube` using the following command:
 
 {{< highlight "sh" >}}
@@ -129,11 +129,11 @@ To ensure you install the right version of `kubectl` we will extract the version
 
 {{< tabs "tabs-kubectl-install" >}}
 
-{{< tab "macOS - Intel" >}} 
+{{< tab "macOS - Intel" >}}
 You can safely click on the {{< icon "gdoc_copy" >}} icon and paste this script snippet into your terminal.
 
 {{< highlight "sh" >}}
-### Extract the Kubernetes cluster version using minikube command 
+### Extract the Kubernetes cluster version using minikube command
 export KUBECTL_VERSION=$(minikube kubectl version -- --output=json | jq -r '.serverVersion | (.major + "." + .minor + ".0")')
 
 echo "Your minikube cluster version is: ${KUBECTL_VERSION}"
@@ -155,11 +155,11 @@ kubectl version --client
 {{< /highlight >}}
 {{< /tab >}}
 
-{{< tab "macOS - Apple Silicon (M1)" >}} 
+{{< tab "macOS - Apple Silicon (M1)" >}}
 You can safely click on the {{< icon "gdoc_copy" >}} icon and paste this script snippet into your terminal.
 
 {{< highlight "sh" >}}
-### Extract the Kubernetes cluster version using minikube command 
+### Extract the Kubernetes cluster version using minikube command
 export KUBECTL_VERSION=$(minikube kubectl version -- --output=json | jq -r '.serverVersion | (.major + "." + .minor + ".0")')
 
 echo "Your minikube cluster version is: ${KUBECTL_VERSION}"
@@ -180,12 +180,12 @@ kubectl version --client
 {{< /highlight >}}
 {{< /tab >}}
 
-{{< tab "Linux" >}} 
+{{< tab "Linux" >}}
 
 You can safely click on the {{< icon "gdoc_copy" >}} icon and paste this script snippet into your terminal.
 
 {{< highlight "sh" >}}
-### Extract the Kubernetes cluster version using minikube command 
+### Extract the Kubernetes cluster version using minikube command
 export KUBECTL_VERSION=$(minikube kubectl version -- --output=json | jq -r '.serverVersion | (.major + "." + .minor + ".0")')
 
 echo "Your minikube cluster version is: ${KUBECTL_VERSION}"
@@ -216,14 +216,14 @@ kubectl version --client
 
 {{< tabs "tabs-kubectx-kubens-install" >}}
 
-{{< tab "macOS" >}} 
+{{< tab "macOS" >}}
 Download and install the latest version of `kubectx` and `kubens` using the following command:
 {{< highlight "sh" >}}
 brew install kubectx kubens
 {{< /highlight >}}
 {{< /tab >}}
 
-{{< tab "Linux" >}} 
+{{< tab "Linux" >}}
 Download and install the latest version of `kubectx` and `kubens` using the following command:
 
 {{< highlight "sh" >}}
@@ -256,19 +256,19 @@ No GUI does not mean no beauty ! K9s is a nice terminal utility that helps you g
 
 {{< tabs "tabs-k9s-install" >}}
 
-{{< tab "macOS" >}} 
+{{< tab "macOS" >}}
 Download and install the latest version of `k9s` using the following command:
 {{< highlight "sh" >}}
 brew install k9s
 {{< /highlight >}}
 {{< /tab >}}
 
-{{< tab "Linux" >}} 
+{{< tab "Linux" >}}
 Download and install the latest version of `k9s` using the following command:
 
 {{< highlight "sh" >}}
 curl -sS https://webinstall.dev/k9s | bash
-source ~/.config/envman/PATH.env                 
+source ~/.config/envman/PATH.env
 {{< /highlight >}}
 {{< /tab >}}
 

@@ -6,10 +6,35 @@ main:
     sub:
       # - name: Terminology
       #   ref: "/kubernetes/terminology"
-      - name: Getting Started
+      - name: 🐌 Getting Started
         ref: "/kubernetes/getting-started"
         sub:
-          - name: Pods - Basics
+          - name: Pods
             ref: "/kubernetes/getting-started/00-pods"
-          - name: Deployments - Basics
+          - name: 🚧 Deployments
             ref: "/kubernetes/getting-started/01-deployments"
+          - name: 🚧 Services
+            ref: "/kubernetes/getting-started/02-services"
+          - name: 🚧 Ingress
+            ref: "/kubernetes/getting-started/03-ingress"
+          - name: 🚧 Configmaps
+            ref: "/kubernetes/getting-started/04-configmaps"
+          - name: 🚧 Volumes
+            ref: "/kubernetes/getting-started/05-volumes"
+      - name: 🐧 Intermediate
+        ref: "/kubernetes/intermediate/"
+        sub:
+          - name: 🚧 Helm
+            ref: "/kubernetes/intermediate/helm/00-helm"
+          - name: 🚧 Monochart
+            ref: "/kubernetes/intermediate/helm/01-monochart"
+          - name: 🚧 Helmfile
+            ref: "/kubernetes/intermediate/helm/02-helmfile"
+
+      - name: 🦄 Advanced
+        ref: "/kubernetes/advanced/"
+        sub:
+          - name: GitOps
+            ref: "/kubernetes/advanced/gitops/"
+          - name: 🚧 Argo
+            ref: "/kubernetes/advanced/gitops/00-argo"
