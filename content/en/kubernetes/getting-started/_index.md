@@ -44,6 +44,10 @@ sudo apt-get install jq curl
 
 {{< /tabs >}}
 
+{{< hint type="caution" >}}
+Make sure you have :whale2: [Docker](https://docs.docker.com/engine/install/) 18.09 or higher (20.10 or higher is recommended) **installed and started** before you proceed. Indeed `minikube` will be running with the docker driver.
+{{< /hint >}}
+
 # Install Minikube
 
 {{< columns >}}
@@ -132,78 +136,107 @@ To ensure you install the right version of `kubectl` we will extract the version
 {{< tab "macOS - Intel" >}}
 You can safely click on the {{< icon "gdoc_copy" >}} icon and paste this script snippet into your terminal.
 
-{{< highlight "sh" >}}
-### Extract the Kubernetes cluster version using minikube command
+* Extract the Kubernetes cluster version using minikube command
+
+```sh
 export KUBECTL_VERSION=$(minikube kubectl version -- --output=json | jq -r '.serverVersion | (.major + "." + .minor + ".0")')
-
 echo "Your minikube cluster version is: ${KUBECTL_VERSION}"
+```
 
-### Download kubectl
+* Download `kubectl`
+```sh
 curl -LO "https://dl.k8s.io/release/v${KUBECTL_VERSION}/bin/darwin/amd64/kubectl"
+```
 
-### Make the kubectl binary executable and move it to /usr/local/bin
+* Make the `kubectl` binary executable and move it to `/usr/local/bin`
+```sh
 chmod +x ./kubectl
 sudo mv ./kubectl /usr/local/bin/kubectl
 sudo chown root: /usr/local/bin/kubectl
+```
 
-### Validate kubectl is working properly
-kubectl version --client
-# > WARNING: This version information is deprecated and will be replaced with the output from kubectl version --short.  Use --output=yaml|json to get the full version.
-# > Client Version: version.Info{Major:"1", Minor:"24", GitVersion:"v1.24.0", GitCommit:"4ce5a8954017644c5420bae81d72b09b735c21f0", GitTreeState:"clean", BuildDate:"2022-05-03T13:46:05Z", GoVersion:"go1.18.1", Compiler:"gc", Platform:"darwin/amd64"}
-# > Kustomize Version: v4.5.4'
-
-{{< /highlight >}}
+* Validate `kubectl` is working properly
+```sh
+kubectl version
+```
+{{< expand "Terminal Output" >}}
+```sh
+WARNING: This version information is deprecated and will be replaced with the output from kubectl version --short.  Use --output=yaml|json to get the full version.
+Client Version: version.Info{Major:"1", Minor:"24", GitVersion:"v1.24.0", GitCommit:"4ce5a8954017644c5420bae81d72b09b735c21f0", GitTreeState:"clean", BuildDate:"2022-05-03T13:46:05Z", GoVersion:"go1.18.1", Compiler:"gc", Platform:"darwin/amd64"}
+Kustomize Version: v4.5.4
+```
+{{< /expand >}}
 {{< /tab >}}
 
 {{< tab "macOS - Apple Silicon (M1)" >}}
 You can safely click on the {{< icon "gdoc_copy" >}} icon and paste this script snippet into your terminal.
 
-{{< highlight "sh" >}}
-### Extract the Kubernetes cluster version using minikube command
+* Extract the Kubernetes cluster version using minikube command
+
+```sh
 export KUBECTL_VERSION=$(minikube kubectl version -- --output=json | jq -r '.serverVersion | (.major + "." + .minor + ".0")')
-
 echo "Your minikube cluster version is: ${KUBECTL_VERSION}"
+```
 
-### Download kubectl
+* Download `kubectl`
+```sh
 curl -LO "https://dl.k8s.io/release/v${KUBECTL_VERSION}/bin/darwin/arm64/kubectl"
+```
 
-### Make the kubectl binary executable and move it to /usr/local/bin
+* Make the `kubectl` binary executable and move it to `/usr/local/bin`
+```sh
 chmod +x ./kubectl
 sudo mv ./kubectl /usr/local/bin/kubectl
 sudo chown root: /usr/local/bin/kubectl
+```
 
-### Validate kubectl is working properly
-kubectl version --client
-# > WARNING: This version information is deprecated and will be replaced with the output from kubectl version --short.  Use --output=yaml|json to get the full version.
-# > Client Version: version.Info{Major:"1", Minor:"24", GitVersion:"v1.24.0", GitCommit:"4ce5a8954017644c5420bae81d72b09b735c21f0", GitTreeState:"clean", BuildDate:"2022-05-03T13:46:05Z", GoVersion:"go1.18.1", Compiler:"gc", Platform:"darwin/arm64"}
-# > Kustomize Version: v4.5.4'
-{{< /highlight >}}
+* Validate `kubectl` is working properly
+```sh
+kubectl version
+```
+{{< expand "Terminal Output" >}}
+```sh
+WARNING: This version information is deprecated and will be replaced with the output from kubectl version --short.  Use --output=yaml|json to get the full version.
+Client Version: version.Info{Major:"1", Minor:"24", GitVersion:"v1.24.0", GitCommit:"4ce5a8954017644c5420bae81d72b09b735c21f0", GitTreeState:"clean", BuildDate:"2022-05-03T13:46:05Z", GoVersion:"go1.18.1", Compiler:"gc", Platform:"darwin/arm64"}
+Kustomize Version: v4.5.4
+```
+{{< /expand >}}
 {{< /tab >}}
 
 {{< tab "Linux" >}}
 
 You can safely click on the {{< icon "gdoc_copy" >}} icon and paste this script snippet into your terminal.
 
-{{< highlight "sh" >}}
-### Extract the Kubernetes cluster version using minikube command
+* Extract the Kubernetes cluster version using minikube command
+
+```sh
 export KUBECTL_VERSION=$(minikube kubectl version -- --output=json | jq -r '.serverVersion | (.major + "." + .minor + ".0")')
-
 echo "Your minikube cluster version is: ${KUBECTL_VERSION}"
+```
 
-### Download kubectl
+* Download `kubectl`
+```sh
 curl -LO "https://dl.k8s.io/release/v${KUBECTL_VERSION}/bin/linux/amd64/kubectl"
+```
 
+* Make the `kubectl` binary executable and move it to `/usr/local/bin`
+```sh
+chmod +x ./kubectl
+sudo mv ./kubectl /usr/local/bin/kubectl
+sudo chown root: /usr/local/bin/kubectl
+```
 
-### Install kubectl in /usr/local/bin after ensuring folder exists
-mkdir -p /usr/local/bin
-sudo install -o root -g root -m 0755 kubectl /usr/local/bin/kubectl
-
-### Validate kubectl is working properly
-kubectl version --client
-# > WARNING: This version information is deprecated and will be replaced with the output from kubectl version --short.  Use --output=yaml|json to get the full version.
-# > Client Version: version.Info{Major:"1", Minor:"24", GitVersion:"v1.24.0", GitCommit:"4ce5a8954017644c5420bae81d72b09b735c21f0", GitTreeState:"clean", BuildDate:"2022-05-03T13:46:05Z", GoVersion:"go1.18.1", Compiler:"gc", Platform:"linux/amd64"}
-# > Kustomize Version: v4.5.4
-{{< /highlight >}}
+* Validate `kubectl` is working properly
+```sh
+kubectl version
+```
+{{< expand "Terminal Output" >}}
+```sh
+WARNING: This version information is deprecated and will be replaced with the output from kubectl version --short.  Use --output=yaml|json to get the full version.
+Client Version: version.Info{Major:"1", Minor:"24", GitVersion:"v1.24.0", GitCommit:"4ce5a8954017644c5420bae81d72b09b735c21f0", GitTreeState:"clean", BuildDate:"2022-05-03T13:46:05Z", GoVersion:"go1.18.1", Compiler:"gc", Platform:"linux/amd64"}
+Kustomize Version: v4.5.4
+```
+{{< /expand >}}
 {{< /tab >}}
 
 {{< /tabs >}}
@@ -217,9 +250,10 @@ kubectl version --client
 {{< tabs "tabs-kubectx-kubens-install" >}}
 
 {{< tab "macOS" >}}
-Download and install the latest version of `kubectx` and `kubens` using the following command:
+Download and install the latest version of `kubectx` and `kubens` using the following commands:
 {{< highlight "sh" >}}
-brew install kubectx kubens
+brew install kubectx
+brew install kubens
 {{< /highlight >}}
 {{< /tab >}}
 
@@ -274,3 +308,71 @@ source ~/.config/envman/PATH.env
 
 {{< /tabs >}}
 
+# Before you move on !
+
+Here are a few more `minikube` commands to ensure you don't get stuck if you come back at a later time on this tutorial.
+
+If you shutdown your machine or stop docker, minikube will also stop your local kubernetes cluster.
+
+Here are a few handful commands you should be aware of:
+
+| Action | Commands | Description |
+| :--- | :------ | :---------- |
+| Cluster lifecycle | `minikube status` / `minikube start` / `minikube delete`  | Manager lifecycle of your minikube instance |
+| Dashboard access | `minikube dashboard` | Access the [Kubernetes Dashboard](https://kubernetes.io/docs/tasks/access-application-cluster/web-ui-dashboard/) |
+| Get IP | `minikube ip` | Retrieves the IP address of the specified node |
+
+And as always, feel free to explore on your all the minikube commands available:
+
+```sh
+minikube help
+
+minikube provisions and manages local Kubernetes clusters optimized for development workflows.
+
+Basic Commands:
+  start            Starts a local Kubernetes cluster
+  status           Gets the status of a local Kubernetes cluster
+  stop             Stops a running local Kubernetes cluster
+  delete           Deletes a local Kubernetes cluster
+  dashboard        Access the Kubernetes dashboard running within the minikube cluster
+  pause            pause Kubernetes
+  unpause          unpause Kubernetes
+
+Images Commands:
+  docker-env       Provides instructions to point your terminal's docker-cli to the Docker Engine inside minikube.
+(Useful for building docker images directly inside minikube)
+  podman-env       Configure environment to use minikube's Podman service
+  cache            Manage cache for images
+  image            Manage images
+
+Configuration and Management Commands:
+  addons           Enable or disable a minikube addon
+  config           Modify persistent configuration values
+  profile          Get or list the current profiles (clusters)
+  update-context   Update kubeconfig in case of an IP or port change
+
+Networking and Connectivity Commands:
+  service          Returns a URL to connect to a service
+  tunnel           Connect to LoadBalancer services
+
+Advanced Commands:
+  mount            Mounts the specified directory into minikube
+  ssh              Log into the minikube environment (for debugging)
+  kubectl          Run a kubectl binary matching the cluster version
+  node             Add, remove, or list additional nodes
+  cp               Copy the specified file into minikube
+
+Troubleshooting Commands:
+  ssh-key          Retrieve the ssh identity key path of the specified node
+  ssh-host         Retrieve the ssh host key of the specified node
+  ip               Retrieves the IP address of the specified node
+  logs             Returns logs to debug a local Kubernetes cluster
+  update-check     Print current and latest version number
+  version          Print the version of minikube
+  options          Show a list of global command-line options (applies to all commands).
+
+Other Commands:
+  completion       Generate command completion for a shell
+
+Use "minikube <command> --help" for more information about a given command.
+```
