@@ -170,7 +170,12 @@ Here is Drone CI/CD pipeline to achieve automatic semantic versioning.
 ### CI/CD pipeline goes here
 ##############################
 
-...
+kind: pipeline
+type: docker
+clone:
+  disable: true
+name: cicd
+steps: [...]
 
 ##############################
 ### GitOps CI/CD pipeline
@@ -189,27 +194,27 @@ clone:
 name: gitops
 steps:
   - name: gitops_clone
-    image: public.ecr.aws/gumgum-verity/oss/git
+    image: alpine/git
     commands:
-      - git clone https://bitbucket.org/gumgum/verity-k8s-ops/ gitops
+      - git clone <K8S-REPO-WITH-HELM-VALUES-FILES> gitops
 
   - name: gitops_autosemver
-    image: public.ecr.aws/gumgum-verity/ci/drone-helm-semver:1.1.0
+    image: lowess/drone-helm-semver
     pull: always
     settings:
       folder: gitops
-      release: <HELM RELEASE NAME>
+      release: <HELM-APP-RELEASE-NAME>
       version: ${DRONE_BUILD_NUMBER}
       allow_multiple: true
     <<: *when_prod
 
   - name: gitops_push
-    image: public.ecr.aws/gumgum-verity/ci/drone-git-push:0.2.2
+    image: appleboy/drone-git-push
     settings:
-      # Bitbucket Auth
+      # SCM Auth
       ssh_key:
         from_secret: gitops_ssh_key
-      remote: <MAIN K8S GIT REPOSITORY WHERE K8S HELM VALUES>
+      remote: <K8S-REPO-WITH-HELM-VALUES-FILES>
       # Git Settings
       branch: master
       commit: true
@@ -217,9 +222,9 @@ steps:
       commit_message: '[GITOPS] :robot: ${DRONE_COMMIT_MESSAGE/\\n/}'
       author_name: 'GitOps'
       author_email: 'noreply@company.com'
+
 depends_on:
   - cicd
-
 {{< /highlight >}}
 
 ### :three: Approved changes that can be automatically applied to the system

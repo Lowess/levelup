@@ -9,6 +9,8 @@ spec:
   containers:
   - image: nginx:latest
     name: hello-world
+    ports:
+    - containerPort: 80
     resources: {}
   dnsPolicy: ClusterFirst
   restartPolicy: Always
