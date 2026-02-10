@@ -24,6 +24,6 @@
     class="gdoc-button__link"
     {{- with $ref }}{{ printf " href=\"%s\"" . | safeHTMLAttr }}{{ end }}
   >
-    {{ $.Inner }}
+    {{ $.Inner | markdownify }}
   </a>
 </span>
